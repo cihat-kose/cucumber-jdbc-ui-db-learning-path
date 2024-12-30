@@ -1,4 +1,4 @@
-# Cucumber JDBC UI DB Testing Framework
+# Mersys UI DB Test Framework
 
 ![Cucumber](https://img.shields.io/badge/Cucumber-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)
 ![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
@@ -30,7 +30,7 @@
 
 ## Introduction
 
-The Cucumber JDBC UI DB Testing Framework is an automated testing solution designed for seamless integration of UI and database (DB) testing using Cucumber, Selenium, JDBC, and TestNG. This framework supports cross-browser testing and generates detailed reports.
+The Mersys UI DB Test Framework is an automated testing solution designed for seamless integration of UI and database (DB) testing using Cucumber, Selenium, JDBC, and TestNG. This framework supports cross-browser testing and generates detailed reports.
 
 ## Why Use This Framework?
 
@@ -87,7 +87,7 @@ Example `ScenarioResults.xlsx` content:
 1. Clone the repository:
    - Open IntelliJ IDEA.
    - Go to File > New > Project from Version Control.
-   - In the URL field, enter the repository URL: https://github.com/ChatGTHB/Cucumber_JDBC_UI_DB_Testing_Framework.git.
+   - In the URL field, enter the repository URL: https://github.com/cihat-kose/mersys-ui-db-test-framework.git.
    - Click Clone.
 
 2. Install necessary plugins:
@@ -181,7 +181,7 @@ To run tests in parallel using TestNG XML files, you can use the provided `Paral
 ## Folder Structure
 
 ```
-Cucumber_JDBC_UI_DB_Testing_Framework/
+mersys-ui-db-test-framework/
 │
 ├── .idea/                      # IntelliJ IDEA configuration files
 ├── src/
