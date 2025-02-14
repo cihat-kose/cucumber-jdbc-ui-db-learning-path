@@ -18,7 +18,7 @@ public class _01_LoginSteps {
     @When("Enter valid username and password and click login button")
     public void enterValidUsernameAndPasswordAndClickLoginButton() {
         dialogContent.mySendKeys(dialogContent.username, "turkeyts");
-        dialogContent.mySendKeys(dialogContent.password, "TechnoStudy123");
+        dialogContent.mySendKeys(dialogContent.password, "Techno2025.%");
         dialogContent.myClick(dialogContent.loginButton);
     }
 
