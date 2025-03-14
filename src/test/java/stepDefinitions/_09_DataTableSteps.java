@@ -2,9 +2,13 @@ package stepDefinitions;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import pages.DialogContent;
 import pages.LeftNav;
+import utilities.GWD;
 
 import java.util.List;
 
@@ -43,6 +47,8 @@ public class _09_DataTableSteps {
             WebElement webElement = dialogContent.getWebElement(items.get(i).get(0)); // 0. Web Element
             dialogContent.mySendKeys(webElement, items.get(i).get(1));
         }
+        // Click on the body element to close popups, dropdowns, or reset the UI state
+        // new Actions(GWD.getDriver()).click(GWD.getDriver().findElement(By.tagName("body"))).perform();
     }
 
     @And("User delete the element from Dialog")
