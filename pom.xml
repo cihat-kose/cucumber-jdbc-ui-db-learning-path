@@ -132,7 +132,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M1</version>
+                <version>3.1.2</version>
                 <configuration>
 
                     <!-- Uncomment the following suiteXmlFiles section to specify a custom XML test suite file -->
@@ -142,7 +142,7 @@
 
                     <includes>
                         <!-- Specifies which class or classes to run; **/ allows locating by any folder structure -->
-                        <include>**/_04_TestRunnerSmoke.java</include>
+                        <include>**/_04_TestRunnerSmoke</include>
                     </includes>
 
                 </configuration>
@@ -160,7 +160,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M1</version>
+                        <version>3.1.2</version>
                         <configuration>
 
                             <!-- Uncomment the following suiteXmlFiles section to specify a custom XML test suite file -->
@@ -170,7 +170,7 @@
 
                             <includes>
                                 <!-- Specifies which class or classes to run; **/ allows locating by any folder structure -->
-                                <include>**/_04_TestRunnerRegression.java</include>
+                                <include>**/_04_TestRunnerRegression</include>
                             </includes>
 
                         </configuration>
@@ -187,7 +187,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M1</version>
+                        <version>3.1.2</version>
                         <configuration>
 
                             <!-- Uncomment the following suiteXmlFiles section to specify a custom XML test suite file -->
@@ -197,7 +197,7 @@
 
                             <includes>
                                 <!-- Specifies which class or classes to run; **/ allows locating by any folder structure -->
-                                <include>**/_05_TestRunnerRegression.java</include>
+                                <include>**/_05_TestRunnerRegression</include>
                             </includes>
 
                         </configuration>
