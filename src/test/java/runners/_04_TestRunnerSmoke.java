@@ -6,7 +6,9 @@ import io.cucumber.testng.*;
         tags = "@SmokeTest",
         features = {"src/test/java/featureFiles"},
         glue = {"stepDefinitions"},
-        plugin = {"json:target/cucumber/cucumber.json"} // JSON report for Jenkins
+        plugin = {
+                "pretty", // For more legible logs on the console
+                "json:target/cucumber/cucumber.json"} // JSON report for Jenkins
 )
 public class _04_TestRunnerSmoke extends AbstractTestNGCucumberTests {
 }

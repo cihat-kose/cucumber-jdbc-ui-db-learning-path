@@ -142,7 +142,7 @@
 
                     <includes>
                         <!-- Specifies which class or classes to run; **/ allows locating by any folder structure -->
-                        <include>**/_04_TestRunnerSmoke</include>
+                        <include>**/_04_TestRunnerSmoke.java</include>
                     </includes>
 
                 </configuration>
@@ -170,7 +170,7 @@
 
                             <includes>
                                 <!-- Specifies which class or classes to run; **/ allows locating by any folder structure -->
-                                <include>**/_04_TestRunnerRegression</include>
+                                <include>**/_04_TestRunnerSmoke.java</include>
                             </includes>
 
                         </configuration>
@@ -197,7 +197,7 @@
 
                             <includes>
                                 <!-- Specifies which class or classes to run; **/ allows locating by any folder structure -->
-                                <include>**/_05_TestRunnerRegression</include>
+                                <include>**/_05_TestRunnerRegression.java</include>
                             </includes>
 
                         </configuration>
