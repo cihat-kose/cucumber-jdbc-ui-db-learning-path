@@ -19,8 +19,8 @@ Feature: Cities Functionality Datatable
 
     And Click on the element in Dialog
       | addButton     |
-      | countrySelect |
-      | countryOption |
+    #  | countrySelect |
+    #  | countryOption |
 
     And User sending the keys in Dialog
       | nameInput | KeremCity |
