@@ -1,6 +1,6 @@
 Feature: Country Functionality
 
-  @SmokeTest @Regression
+  @Regression
   Scenario: Create a country
     Given Navigate to campus
     When  Enter valid username and password and click login button
