@@ -9,7 +9,9 @@ import org.testng.annotations.AfterClass;
         tags = "@SmokeTest",
         features = {"src/test/java/featureFiles"},
         glue = {"stepDefinitions"},
-        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+        plugin = {
+                "pretty",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class _07_TestRunnerExtentReport extends AbstractTestNGCucumberTests {
     @AfterClass

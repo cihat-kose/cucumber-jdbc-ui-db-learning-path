@@ -30,7 +30,7 @@ public class _06_TestRunnerSmokeWithPlugin {
                 tags = "@SmokeTest",
                 features = {"src/test/java/featureFiles"},
                 glue = {"stepDefinitions"},
-                plugin = {},
+                plugin = {"pretty"},
                 dryRun = false
         )
         public static class TestRunner extends AbstractTestNGCucumberTests {

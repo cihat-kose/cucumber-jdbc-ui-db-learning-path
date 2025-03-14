@@ -12,7 +12,9 @@ import org.testng.annotations.Parameters;
         tags = "@Regression",
         features = {"src/test/java/featureFiles"},
         glue={"stepDefinitions"},
-        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+        plugin = {
+                "pretty",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class _08_TestRunnerParallel extends AbstractTestNGCucumberTests {
 
