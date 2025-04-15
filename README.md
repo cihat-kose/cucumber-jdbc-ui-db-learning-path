@@ -67,7 +67,8 @@ example database commonly used for educational and testing purposes.
 
 ## Reporting
 
-Test results are stored in the `test-output` and `testReports` directories. Test reports are generated in both HTML (Spark) and PDF formats using ExtentReports and may include screenshots.
+Test results are stored in the `test-output` and `testReports` directories. Test reports are generated in both HTML (
+Spark) and PDF formats using ExtentReports and may include screenshots.
 Additionally, test scenario results are recorded in the `ScenarioResults.xlsx`
 file.
 
@@ -232,9 +233,12 @@ The following dependencies are defined in the `pom.xml` and required for the pro
 - **Cucumber TestNG**: Integrates Cucumber with TestNG.
 - **SLF4J API**: Logging facade for Java (used with different logging implementations).
 - **SLF4J Simple**: Simple console-based logging for development/testing.
-- **DataFaker**: Modern, actively maintained alternative to JavaFaker. Used to generate fake names, addresses, phone numbers, etc.
-- **Apache Commons Lang**: Provides extra functionality for core Java classes, such as `StringUtils`, `ObjectUtils`, `ArrayUtils`, etc.
-- **Apache Commons IO**: Simplifies input/output operations with utilities like `FileUtils`, `IOUtils`, and stream handling helpers.
+- **DataFaker**: Modern, actively maintained alternative to JavaFaker. Used to generate fake names, addresses, phone
+  numbers, etc.
+- **Apache Commons Lang**: Provides extra functionality for core Java classes, such as `StringUtils`, `ObjectUtils`,
+  `ArrayUtils`, etc.
+- **Apache Commons IO**: Simplifies input/output operations with utilities like `FileUtils`, `IOUtils`, and stream
+  handling helpers.
 - **ExtentReports Cucumber Adapter**: Generates rich test reports with Cucumber.
 - **Apache POI**: Read/write Excel (XLS/XLSX) files.
 - **Apache POI OOXML**: Support for Office Open XML (XLSX) formats.
@@ -242,7 +246,8 @@ The following dependencies are defined in the `pom.xml` and required for the pro
 
 ### Deprecated Dependencies
 
-- **JavaFaker** was previously used for data generation but has been replaced with **DataFaker** due to maintenance and security concerns.
+- **JavaFaker** was previously used for data generation but has been replaced with **DataFaker** due to maintenance and
+  security concerns.
 
 ## Contributing
 
