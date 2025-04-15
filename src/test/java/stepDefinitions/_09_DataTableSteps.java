@@ -3,6 +3,7 @@ package stepDefinitions;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.DialogContent;
@@ -58,5 +59,10 @@ public class _09_DataTableSteps {
             String s = willBeDeleted.get(i);
             dialogContent.deleteItem(s);
         }
+    }
+
+    @And("User sending the Enter keys in Dialog")
+    public void userSendingTheEnterKeysInDialog() {
+        new Actions(GWD.getDriver()).sendKeys(Keys.ENTER).build().perform();
     }
 }

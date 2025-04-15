@@ -17,7 +17,7 @@ public class LeftNav extends Parent {
     public WebElement citizenship;
     @FindBy(xpath = "(//span[text()='Inventory'])[1]")
     public WebElement inventory;
-    @FindBy(xpath = "(//span[text()='Setup'])[4]")
+    @FindBy(xpath = "(//span[text()='Setup'])[5]")
     public WebElement setupInventory;
     @FindBy(xpath = "//span[text()='Item Categories']")
     public WebElement itemCategories;

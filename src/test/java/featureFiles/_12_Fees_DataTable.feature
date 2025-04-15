@@ -10,20 +10,23 @@ Feature: Cities Functionality Datatable
     Then User should login successfully
 
   @SmokeTest
-  Scenario: Create and Delete Cities
+  Scenario: Fees create and delete functionality
 
     And Click on the element in LeftNav
       | setup      |
       | parameters |
-      | cities     |
+      | fees       |
 
     And Click on the element in Dialog
       | addButton |
-    #  | countrySelect |
-    #  | countryOption |
 
     And User sending the keys in Dialog
-      | nameInput | KeremCity |
+      | nameInput       | KeremCity |
+      | codeInput       | 23941     |
+      | integrationCode | Crypto    |
+      | priorityCode    | 42435     |
+
+    And User sending the Enter keys in Dialog
 
     And Click on the element in Dialog
       | saveButton |

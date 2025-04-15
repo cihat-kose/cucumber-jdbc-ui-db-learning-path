@@ -36,7 +36,7 @@ public class DialogContent extends Parent {
     public WebElement shortName;
     @FindBy(xpath = "//div[contains(text(),'already exists')]")
     public WebElement alreadyExist;
-    @FindBy(xpath = "//mat-chip-list[@formcontrolname='roles' ]//input")
+    @FindBy(xpath = "//input[@formcontrolname='roles' ]")
     public WebElement userType;
     @FindBy(xpath = "//span[text()=' Student ']")
     public WebElement student;
@@ -55,22 +55,16 @@ public class DialogContent extends Parent {
     public WebElement saveClose;
     @FindBy(xpath = "//mat-form-field//input[@placeholder='Name']")
     private WebElement searchInput;
-
     @FindBy(xpath = "//ms-search-button//button")
     private WebElement searchButton;
-
     @FindBy(xpath = "(//ms-delete-button//button)[1]")
     private WebElement deleteImageButton;
-
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement deleteDialogButton;
-
     @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']//input")
     private WebElement integrationCode;
-
     @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']/input")
     private WebElement priorityCode;
-
     @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']//button")
     private WebElement toggleBar;
 
