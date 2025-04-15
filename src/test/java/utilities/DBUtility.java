@@ -15,6 +15,11 @@ public class DBUtility {
 
         try {
             dbConnectionOpen();
+
+            if (connection == null || statement == null) {
+                throw new RuntimeException("Database connection is not established!");
+            }
+
             ResultSet resultTable = statement.executeQuery(sql);
             ResultSetMetaData resultTableMetaData = resultTable.getMetaData();
 
@@ -33,7 +38,8 @@ public class DBUtility {
                 table.add(rowList);
             }
         } catch (Exception exception) {
-            System.out.println(exception.getMessage());
+            exception.printStackTrace();
+            throw new RuntimeException("Database error occurred!", exception);
         } finally {
             dbConnectionClose();
         }
@@ -51,16 +57,20 @@ public class DBUtility {
             connection = DriverManager.getConnection(hostUrl, username, password);
             statement = connection.createStatement();
         } catch (Exception exception) {
-            System.out.println(exception.getMessage());
+            exception.printStackTrace(); // Failed to connect due to which error, to be able to see clearly
         }
+
+        System.out.println("Connection object: " + connection);
+
     }
 
     public static void dbConnectionClose() {
-
         try {
-            connection.close();
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
         } catch (SQLException exception) {
-            System.out.println(exception.getMessage());
+            exception.printStackTrace();
         }
     }
 }
