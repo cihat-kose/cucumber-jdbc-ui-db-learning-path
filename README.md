@@ -67,8 +67,8 @@ example database commonly used for educational and testing purposes.
 
 ## Reporting
 
-Test results are stored in the `test-output` and `testReports` directories. Test reports are generated in both HTML and
-PDF formats and may include screenshots. Additionally, test scenario results are recorded in the `ScenarioResults.xlsx`
+Test results are stored in the `test-output` and `testReports` directories. Test reports are generated in both HTML (Spark) and PDF formats using ExtentReports and may include screenshots.
+Additionally, test scenario results are recorded in the `ScenarioResults.xlsx`
 file.
 
 The `ScenarioResults.xlsx` file provides a mini-report for each test scenario, including the scenario name, status (
@@ -224,21 +224,25 @@ mersys-ui-db-test-framework/
 
 ## Dependencies
 
-The following dependencies are required for the project to work. These dependencies are added in the `pom.xml` file:
+The following dependencies are defined in the `pom.xml` and required for the project to work:
 
-- **Selenium**: Used for UI test automation.
-- **Cucumber**: Used for behavior-driven development (BDD).
-- **TestNG**: Used for organizing and running tests.
+- **Selenium**: UI test automation.
+- **Cucumber**: Behavior-driven development (BDD) framework.
+- **TestNG**: Test framework for organizing and executing test cases.
 - **Cucumber TestNG**: Integrates Cucumber with TestNG.
-- **SLF4J API**: Logging framework.
-- **SLF4J Simple**: Simple logging implementation for SLF4J.
-- **Java Faker**: Generates realistic fake data for testing purposes, such as names, addresses, and alphanumeric
-  strings.
-- **Apache Commons Lang**: Utility library for Java.
-- **Extent Reports Cucumber Adapter**: Integrates Extent Reports with Cucumber.
-- **Apache POI**: Library for reading and writing Excel files.
-- **Apache POI OOXML**: Extension for handling Office Open XML (OOXML) files.
-- **MySQL Connector**: JDBC driver for MySQL.
+- **SLF4J API**: Logging facade for Java (used with different logging implementations).
+- **SLF4J Simple**: Simple console-based logging for development/testing.
+- **DataFaker**: Modern, actively maintained alternative to JavaFaker. Used to generate fake names, addresses, phone numbers, etc.
+- **Apache Commons Lang**: Provides extra functionality for core Java classes, such as `StringUtils`, `ObjectUtils`, `ArrayUtils`, etc.
+- **Apache Commons IO**: Simplifies input/output operations with utilities like `FileUtils`, `IOUtils`, and stream handling helpers.
+- **ExtentReports Cucumber Adapter**: Generates rich test reports with Cucumber.
+- **Apache POI**: Read/write Excel (XLS/XLSX) files.
+- **Apache POI OOXML**: Support for Office Open XML (XLSX) formats.
+- **MySQL Connector/J**: JDBC driver for connecting to MySQL databases.
+
+### Deprecated Dependencies
+
+- **JavaFaker** was previously used for data generation but has been replaced with **DataFaker** due to maintenance and security concerns.
 
 ## Contributing
 
