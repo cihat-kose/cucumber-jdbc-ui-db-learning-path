@@ -26,41 +26,41 @@ import java.util.Date;
 
 public class _06_TestRunnerSmokeWithPlugin {
 
-        @CucumberOptions(
-                tags = "@SmokeTest",
-                features = {"src/test/java/featureFiles"},
-                glue = {"stepDefinitions"},
-                plugin = {"pretty"},
-                dryRun = false
-        )
-        public static class TestRunner extends AbstractTestNGCucumberTests {
+    public static void main(String[] args) {
+        // Dynamically merge plugin setting with Cucumber Options
+        String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String reportFile = "target/site/cucumber-pretty-" + timestamp + ".html";
+        System.setProperty("cucumber.plugin", "html:" + reportFile);
 
-                @BeforeClass(alwaysRun = true)
-                public void setUp() {
-                        // Create a unique file name using a timestamp
-                        String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-                        String reportFile = "target/site/cucumber-pretty-" + timestamp + ".html";
+        // Initialize the TestNG class
+        org.testng.TestNG testNG = new org.testng.TestNG();
+        testNG.setTestClasses(new Class[]{TestRunner.class});
+        testNG.run();
+    }
 
-                        // Dynamically change plugin setting
-                        System.setProperty("cucumber.plugin", "html:" + reportFile);
-                }
+    @CucumberOptions(
+            tags = "@SmokeTest",
+            features = {"src/test/java/featureFiles"},
+            glue = {"stepDefinitions"},
+            plugin = {"pretty"},
+            dryRun = false
+    )
+    public static class TestRunner extends AbstractTestNGCucumberTests {
 
-                @Override
-                @DataProvider(parallel = true)
-                public Object[][] scenarios() {
-                        return super.scenarios();
-                }
+        @BeforeClass(alwaysRun = true)
+        public void setUp() {
+            // Create a unique file name using a timestamp
+            String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+            String reportFile = "target/site/cucumber-pretty-" + timestamp + ".html";
+
+            // Dynamically change plugin setting
+            System.setProperty("cucumber.plugin", "html:" + reportFile);
         }
 
-        public static void main(String[] args) {
-                // Dynamically merge plugin setting with Cucumber Options
-                String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-                String reportFile = "target/site/cucumber-pretty-" + timestamp + ".html";
-                System.setProperty("cucumber.plugin", "html:" + reportFile);
-
-                // Initialize the TestNG class
-                org.testng.TestNG testNG = new org.testng.TestNG();
-                testNG.setTestClasses(new Class[]{TestRunner.class});
-                testNG.run();
+        @Override
+        @DataProvider(parallel = true)
+        public Object[][] scenarios() {
+            return super.scenarios();
         }
+    }
 }

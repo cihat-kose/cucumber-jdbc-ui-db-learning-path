@@ -1,17 +1,17 @@
 package apachePOI;
 
 /**
-    Main den bir metod çağırmak suretiyle, henüz oluşturulmamış
-    path'i verilen excel için, program her çalıştıkça içine "Test passed"
-    yazısını ekleyen metodu yazınız.
-    Yani dosya yoksa oluştur ilk satıra yaz, sonra dosya oluşacağı için
-    dosya varsa en son satırın altına yaz.
-    ----------------------------------------------------------------------------------
-    By calling a method from Main, a method that has not yet been created can be created.
-    For Excel whose path is given, "test passed" is entered every time the program runs.
-    Write the method that adds the text.
-    So if there is no file, write create on the first line, then the file will be created.
-    If there is a file, write it below the last line.
+ * Main den bir metod çağırmak suretiyle, henüz oluşturulmamış
+ * path'i verilen excel için, program her çalıştıkça içine "Test passed"
+ * yazısını ekleyen metodu yazınız.
+ * Yani dosya yoksa oluştur ilk satıra yaz, sonra dosya oluşacağı için
+ * dosya varsa en son satırın altına yaz.
+ * ----------------------------------------------------------------------------------
+ * By calling a method from Main, a method that has not yet been created can be created.
+ * For Excel whose path is given, "test passed" is entered every time the program runs.
+ * Write the method that adds the text.
+ * So if there is no file, write create on the first line, then the file will be created.
+ * If there is a file, write it below the last line.
  */
 
 import org.apache.poi.ss.usermodel.*;

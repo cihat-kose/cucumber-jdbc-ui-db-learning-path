@@ -30,45 +30,57 @@
 
 ## Introduction
 
-The Mersys UI DB Test Framework is an automated testing solution designed for seamless integration of UI and database (DB) testing using Cucumber, Selenium, JDBC, and TestNG. This framework supports cross-browser testing and generates detailed reports.
+The Mersys UI DB Test Framework is an automated testing solution designed for seamless integration of UI and database (
+DB) testing using Cucumber, Selenium, JDBC, and TestNG. This framework supports cross-browser testing and generates
+detailed reports.
 
 ## Why Use This Framework?
 
-In modern software development, ensuring the quality of both the user interface and the backend database is crucial. Manual testing can be time-consuming and prone to errors. This framework offers a robust solution by combining the strengths of Cucumber for behavior-driven development (BDD), Selenium for UI testing, JDBC for database interactions, and TestNG for test execution and reporting.
+In modern software development, ensuring the quality of both the user interface and the backend database is crucial.
+Manual testing can be time-consuming and prone to errors. This framework offers a robust solution by combining the
+strengths of Cucumber for behavior-driven development (BDD), Selenium for UI testing, JDBC for database interactions,
+and TestNG for test execution and reporting.
 
 ## Key Benefits
 
 - **Seamless Integration**: Easily integrate UI and DB tests in a single framework.
 - **Behavior-Driven Development**: Use Gherkin syntax to define test scenarios in a human-readable format.
 - **Cross-Browser Support**: Test your application across multiple browsers to ensure compatibility.
-- **Detailed Reporting**: Generate comprehensive test reports to quickly identify and fix issues. Reports are produced in both HTML and PDF formats and may include screenshots.
+- **Detailed Reporting**: Generate comprehensive test reports to quickly identify and fix issues. Reports are produced
+  in both HTML and PDF formats and may include screenshots.
 - **Parameterized Testing**: Use data tables for running tests with multiple sets of data.
 - **Easy Configuration**: Simple configuration for different environments and databases.
 - **Apache POI Integration**: Read and write Excel files using Apache POI.
-- **Jenkins Integration**: The framework can be easily integrated into Jenkins for continuous integration/delivery (CI/CD) processes.
+- **Jenkins Integration**: The framework can be easily integrated into Jenkins for continuous integration/delivery (
+  CI/CD) processes.
 - **Page Object Model (POM)**: Improve test maintenance and readability by using the Page Object Model design pattern.
 
 ## Application Under Test
 
-This framework is currently used to test the [Mersys](https://test.mersys.io/) application. Mersys is a comprehensive solution that requires thorough testing to ensure its reliability and performance.
+This framework is currently used to test the [Mersys](https://test.mersys.io/) application. Mersys is a comprehensive
+solution that requires thorough testing to ensure its reliability and performance.
 
 ## Database Used
 
-This framework uses the [Sakila](https://dev.mysql.com/doc/sakila/en/) database for database testing. Sakila is an example database commonly used for educational and testing purposes.
+This framework uses the [Sakila](https://dev.mysql.com/doc/sakila/en/) database for database testing. Sakila is an
+example database commonly used for educational and testing purposes.
 
 ## Reporting
 
-Test results are stored in the `test-output` and `testReports` directories. Test reports are generated in both HTML and PDF formats and may include screenshots. Additionally, test scenario results are recorded in the `ScenarioResults.xlsx` file.
+Test results are stored in the `test-output` and `testReports` directories. Test reports are generated in both HTML and
+PDF formats and may include screenshots. Additionally, test scenario results are recorded in the `ScenarioResults.xlsx`
+file.
 
-The `ScenarioResults.xlsx` file provides a mini-report for each test scenario, including the scenario name, status (passed/failed), and the browser used. This is done using the `Hooks` class in the framework.
+The `ScenarioResults.xlsx` file provides a mini-report for each test scenario, including the scenario name, status (
+passed/failed), and the browser used. This is done using the `Hooks` class in the framework.
 
 Example `ScenarioResults.xlsx` content:
 
-| Scenario Name     | Status   | Browser   |
-|-------------------|----------|-----------|
-| Login Test        | Passed   | Chrome    |
-| Search Test       | Failed   | Firefox   |
-| Checkout Test     | Passed   | Edge      |
+| Scenario Name | Status | Browser |
+|---------------|--------|---------|
+| Login Test    | Passed | Chrome  |
+| Search Test   | Failed | Firefox |
+| Checkout Test | Passed | Edge    |
 
 ## Features
 
@@ -85,98 +97,99 @@ Example `ScenarioResults.xlsx` content:
 ## Installation
 
 1. Clone the repository:
-   - Open IntelliJ IDEA.
-   - Go to File > New > Project from Version Control.
-   - In the URL field, enter the repository URL: https://github.com/cihat-kose/mersys-ui-db-test-framework.git.
-   - Click Clone.
+    - Open IntelliJ IDEA.
+    - Go to File > New > Project from Version Control.
+    - In the URL field, enter the repository URL: https://github.com/cihat-kose/mersys-ui-db-test-framework.git.
+    - Click Clone.
 
 2. Install necessary plugins:
-   - In order to work with Cucumber and Gherkin in IntelliJ IDEA, ensure you have the following plugins installed:
-      - Cucumber for Java (by JetBrains)
-      - Gherkin (by JetBrains)
+    - In order to work with Cucumber and Gherkin in IntelliJ IDEA, ensure you have the following plugins installed:
+        - Cucumber for Java (by JetBrains)
+        - Gherkin (by JetBrains)
 
-   - To install these plugins:
-      1. Open IntelliJ IDEA and go to File > Settings (or Preferences on macOS).
-      2. Navigate to Plugins in the left sidebar.
-      3. Search for Cucumber for Java and Gherkin in the marketplace tab.
-      4. Install both plugins and restart IntelliJ IDEA if prompted.
+    - To install these plugins:
+        1. Open IntelliJ IDEA and go to File > Settings (or Preferences on macOS).
+        2. Navigate to Plugins in the left sidebar.
+        3. Search for Cucumber for Java and Gherkin in the marketplace tab.
+        4. Install both plugins and restart IntelliJ IDEA if prompted.
 
 3. Open the project:
-   - IntelliJ IDEA will automatically detect and import the project as a Maven project.
-   - Wait for the dependencies to be downloaded.
-
+    - IntelliJ IDEA will automatically detect and import the project as a Maven project.
+    - Wait for the dependencies to be downloaded.
 
 ## Configuration
 
 1. **Configure properties**:
-   - Open `src/test/resources/cucumber.properties` and update the file with your database and browser details:
-       ```properties
-       browser=chrome
-       dbUrl=jdbc:mysql://localhost:3306/sakila
-       dbUser=root
-       dbPassword=password
-       ```
-   - Open `src/test/resources/extent.properties` and configure reporting options:
-       ```properties
-       reportPath=test-output/extent-report.html
-       screenshotPath=test-output/screenshots/
-       ```
+    - Open `src/test/resources/cucumber.properties` and update the file with your database and browser details:
+        ```properties
+        browser=chrome
+        dbUrl=jdbc:mysql://localhost:3306/sakila
+        dbUser=root
+        dbPassword=password
+        ```
+    - Open `src/test/resources/extent.properties` and configure reporting options:
+        ```properties
+        reportPath=test-output/extent-report.html
+        screenshotPath=test-output/screenshots/
+        ```
 
 ## Usage
 
 1. **Run tests**:
-   - In IntelliJ IDEA, open the `src/test/java` directory.
-   - Right-click on any test file or directory and select `Run 'TestName'`.
+    - In IntelliJ IDEA, open the `src/test/java` directory.
+    - Right-click on any test file or directory and select `Run 'TestName'`.
 
 2. **Jenkins Integration**:
-   - Create or configure a Jenkins job.
-   - Add a `Build Step` to run tests using the `pom.xml` file. Follow these steps:
+    - Create or configure a Jenkins job.
+    - Add a `Build Step` to run tests using the `pom.xml` file. Follow these steps:
 
-     a. **Add a Maven Project in Jenkins**:
-      - In Jenkins, click "New Item".
-      - Enter a project name and select "Maven Project".
-      - Click "OK".
+      a. **Add a Maven Project in Jenkins**:
+        - In Jenkins, click "New Item".
+        - Enter a project name and select "Maven Project".
+        - Click "OK".
 
-     b. **Source Code Management**:
-      - In the "Source Code Management" section, enter the Git repository URL.
-      - Provide necessary credentials.
+      b. **Source Code Management**:
+        - In the "Source Code Management" section, enter the Git repository URL.
+        - Provide necessary credentials.
 
-     c. **Build Triggers**:
-      - In the "Build Triggers" section, select appropriate triggers (e.g., "GitHub hook trigger for GITScm polling").
+      c. **Build Triggers**:
+        - In the "Build Triggers" section, select appropriate triggers (e.g., "GitHub hook trigger for GITScm polling").
 
-     d. **Build Steps**:
-      - In the "Build" section, click "Add build step" and select "Invoke top-level Maven targets".
-      - In the "Goals" field, enter `clean test`.
+      d. **Build Steps**:
+        - In the "Build" section, click "Add build step" and select "Invoke top-level Maven targets".
+        - In the "Goals" field, enter `clean test`.
 
-     e. **Post-build Actions**:
-      - In the "Post-build Actions" section, add "Publish HTML reports" and specify the path to the HTML reports (e.g., `test-output`).
+      e. **Post-build Actions**:
+        - In the "Post-build Actions" section, add "Publish HTML reports" and specify the path to the HTML reports (
+          e.g., `test-output`).
 
 ## Parallel Testing
 
-To run tests in parallel using TestNG XML files, you can use the provided `ParallelTest.xml`, `RegressionTest.xml`, and `SmokeTest.xml` files. Follow these steps to enable parallel execution:
+To run tests in parallel using TestNG XML files, you can use the provided `ParallelTest.xml`, `RegressionTest.xml`, and
+`SmokeTest.xml` files. Follow these steps to enable parallel execution:
 
 1. **Use the `ParallelTest.xml` file**:
-   - Open the `ParallelTest.xml` file located in the `src/test/resources/xml` directory.
-   - Ensure the suite tag includes `parallel` and `thread-count` attributes. For example:
-     ```xml
-     <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-     <suite name="ParallelSuite" parallel="tests" thread-count="4">
-         <test name="ParallelTest1">
-             <classes>
-                 <class name="com.example.tests.TestClass1"/>
-             </classes>
-         </test>
-         <test name="ParallelTest2">
-             <classes>
-                 <class name="com.example.tests.TestClass2"/>
-             </classes>
-         </test>
-     </suite>
-     ```
+    - Open the `ParallelTest.xml` file located in the `src/test/resources/xml` directory.
+    - Ensure the suite tag includes `parallel` and `thread-count` attributes. For example:
+      ```xml
+      <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+      <suite name="ParallelSuite" parallel="tests" thread-count="4">
+          <test name="ParallelTest1">
+              <classes>
+                  <class name="com.example.tests.TestClass1"/>
+              </classes>
+          </test>
+          <test name="ParallelTest2">
+              <classes>
+                  <class name="com.example.tests.TestClass2"/>
+              </classes>
+          </test>
+      </suite>
+      ```
 
 2. **Run the tests**:
-   - In IntelliJ IDEA, right-click on the `ParallelTest.xml` file and select `Run 'ParallelTest.xml'`.
-   - This will execute the tests defined in the XML file in parallel, according to the configuration.
+    - In IntelliJ IDEA, right-click on the `ParallelTest.xml` file and select `Run 'ParallelTest.xml'`.
+    - This will execute the tests defined in the XML file in parallel, according to the configuration.
 
 ## Folder Structure
 
@@ -219,7 +232,8 @@ The following dependencies are required for the project to work. These dependenc
 - **Cucumber TestNG**: Integrates Cucumber with TestNG.
 - **SLF4J API**: Logging framework.
 - **SLF4J Simple**: Simple logging implementation for SLF4J.
-- **Java Faker**: Generates realistic fake data for testing purposes, such as names, addresses, and alphanumeric strings.
+- **Java Faker**: Generates realistic fake data for testing purposes, such as names, addresses, and alphanumeric
+  strings.
 - **Apache Commons Lang**: Utility library for Java.
 - **Extent Reports Cucumber Adapter**: Integrates Extent Reports with Cucumber.
 - **Apache POI**: Library for reading and writing Excel files.
@@ -229,6 +243,7 @@ The following dependencies are required for the project to work. These dependenc
 ## Contributing
 
 Contributions are welcome!
+
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
 3. Commit your changes (`git commit -m 'Add new feature'`).

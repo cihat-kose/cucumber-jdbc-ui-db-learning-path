@@ -16,9 +16,9 @@ public class Parent {
     public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
     public JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
 
-    public void loginContainsText(WebElement element, String value){
-        wait.until(ExpectedConditions.textToBePresentInElement(element,value));
-        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()) );
+    public void loginContainsText(WebElement element, String value) {
+        wait.until(ExpectedConditions.textToBePresentInElement(element, value));
+        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
     }
 
     public void myClick(WebElement element) {

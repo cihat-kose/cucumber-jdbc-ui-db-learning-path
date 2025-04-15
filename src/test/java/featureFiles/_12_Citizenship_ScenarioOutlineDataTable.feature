@@ -20,7 +20,7 @@ Feature: CitizenShip functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput | <name>  |
+      | nameInput | <name>      |
       | shortName | <shortname> |
 
     And Click on the element in Dialog

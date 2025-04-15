@@ -1,13 +1,13 @@
 package apachePOI;
 
 /**
-    By calling a method from the main, path and sheet name information is given from Excel.
-    Read the data in the desired column and put it in a list.
-    In this question, the source for Excel: Sheet 2 of ApacheExcel.xlsx will be used.
-    ---------------------------------------------------------------------------------------
-    Mainden bir metod çağırmak suretiyle, path ve sheet name bilgileri verilen excelden
-    istenilen sütun kadar veriyi okuyup bir list'e atınız.
-    Bu soruda kaynak Excel için : ApacheExcel.xlsx  in 2.sheeti kullanılacak.
+ * By calling a method from the main, path and sheet name information is given from Excel.
+ * Read the data in the desired column and put it in a list.
+ * In this question, the source for Excel: Sheet 2 of ApacheExcel.xlsx will be used.
+ * ---------------------------------------------------------------------------------------
+ * Mainden bir metod çağırmak suretiyle, path ve sheet name bilgileri verilen excelden
+ * istenilen sütun kadar veriyi okuyup bir list'e atınız.
+ * Bu soruda kaynak Excel için : ApacheExcel.xlsx  in 2.sheeti kullanılacak.
  */
 
 import org.apache.poi.ss.usermodel.Sheet;

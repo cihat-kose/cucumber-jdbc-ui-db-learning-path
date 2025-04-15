@@ -18,7 +18,7 @@ Feature: Cities Functionality Datatable
       | cities     |
 
     And Click on the element in Dialog
-      | addButton     |
+      | addButton |
     #  | countrySelect |
     #  | countryOption |
 

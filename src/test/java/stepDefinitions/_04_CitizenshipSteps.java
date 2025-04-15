@@ -1,10 +1,9 @@
 package stepDefinitions;
 
-import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.commons.lang3.RandomStringUtils;
+import net.datafaker.Faker;
 import pages.DialogContent;
 import pages.LeftNav;
 
@@ -23,7 +22,7 @@ public class _04_CitizenshipSteps {
 
     @When("Create a citizenship")
     public void createACitizenship() {
-        String citizenshipName = faker.nation().nationality()+ " - " + faker.random().hex(3);
+        String citizenshipName = faker.nation().nationality() + " - " + faker.random().hex(3);
         String citizenshipShortCode = faker.random().hex(3);
 
         dialogContent.myClick(dialogContent.addButton);

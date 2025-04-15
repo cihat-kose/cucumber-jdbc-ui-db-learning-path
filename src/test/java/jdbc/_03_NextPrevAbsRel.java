@@ -2,7 +2,8 @@ package jdbc;
 
 import org.testng.annotations.Test;
 
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class _03_NextPrevAbsRel extends JDBCParent {
 
