@@ -111,13 +111,33 @@ public class DialogContent extends Parent {
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
 
+//    public void deleteItem(String searchText) {
+//        GWD.getDriver().navigate().refresh();
+//        mySendKeys(searchInput, searchText);
+//        myClick(searchButton);
+//        wait.until(ExpectedConditions.elementToBeClickable(searchButton));
+//        // Alternative Way:
+//        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//ms-delete-button//button"), 1));
+//        myClick(deleteImageButton);
+//        myClick(deleteDialogButton);
+//    }
+
     public void deleteItem(String searchText) {
-        GWD.getDriver().navigate().refresh();
+        GWD.getDriver().navigate().refresh(); // Refresh the page
+
+        // Enter the search text and click search
         mySendKeys(searchInput, searchText);
         myClick(searchButton);
+
+        // Ensure the row with the searched text is visible
+        By rowLocator = By.xpath("//tr[td[contains(text(),'" + searchText + "')]]");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(rowLocator));
         wait.until(ExpectedConditions.elementToBeClickable(searchButton));
-        // Alternative Way:
+
+        // Check the number of delete buttons available
         wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//ms-delete-button//button"), 1));
+
+        // Perform the delete operation
         myClick(deleteImageButton);
         myClick(deleteDialogButton);
     }
