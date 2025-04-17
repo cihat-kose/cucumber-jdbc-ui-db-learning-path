@@ -47,9 +47,9 @@ public class Parent {
         // Create a FluentWait instance with a timeout of 10 seconds and polling every 300 ms
         FluentWait<WebDriver> waitWithRetry = new FluentWait<>(GWD.getDriver())
                 .withTimeout(Duration.ofSeconds(10))             // total wait time
-                .pollingEvery(Duration.ofMillis(300))            // check every 300ms
-                .ignoring(StaleElementReferenceException.class)  // ignore stale element errors
-                .ignoring(NoSuchElementException.class);         // ignore element not found errors
+                .pollingEvery(Duration.ofMillis(300))              // check every 300ms
+                .ignoring(StaleElementReferenceException.class)    // ignore stale element errors
+                .ignoring(NoSuchElementException.class);           // ignore element not found errors
 
         // The condition we're waiting for: the element should contain the expected text
         boolean result = waitWithRetry.until(driver -> {
@@ -72,30 +72,5 @@ public class Parent {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         scrollToElement(element);
         js.executeScript("arguments[0].click();", element);
-    }
-
-    // Left as an example
-    public void verifyMessageContainsTextREVIEW(String value) {
-        // Problem: Due to the message appearing and disappearing quickly,
-        // it is difficult to use getText and perform an Assert.
-        // Purpose: Find an alternative way to Assert the message on the element's location.
-
-        // List<WebElement> MessageBoxElements=
-        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"), 0));
-        // Wait until there is more than 1 element in the specified area, meaning the MESSAGE box is visible
-
-//    System.out.println("MessageBoxElements.size() = " + MessageBoxElements.size());
-//    for(WebElement e : MessageBoxElements)
-//        System.out.println("->"+e.getText()+"<->"+e.getAccessibleName()+"<->"+e.getTagName());
-
-        // WebElement MessageBoxParent1 = GWD.getDriver().findElement(By.xpath("//hot-toast-container/div/div/div"));
-        WebElement MessageBoxParent2 = GWD.getDriver().findElement(By.tagName("mat-panel-description")); // mat-expansion-panel-header
-//
-//    System.out.println("MessageBoxParent2.getText() = " + MessageBoxParent2.getText()); // Visible text on the screen
-//    System.out.println("MessageBoxParent2.getAccessibleName() = " + MessageBoxParent2.getAccessibleName()); // Provides accessible HTML info on the screen
-//    System.out.println("MessageBoxParent2.getTagName() = " + MessageBoxParent2.getTagName()); // Tag name
-//    System.out.println("MessageBoxParent2.getAttribute(innerHTML) = " + MessageBoxParent2.getAttribute("innerHTML")); // HTML code between tags
-
-        Assert.assertTrue(MessageBoxParent2.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
     }
 }

@@ -111,34 +111,26 @@ public class DialogContent extends Parent {
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
 
-//    public void deleteItem(String searchText) {
-//        GWD.getDriver().navigate().refresh();
-//        mySendKeys(searchInput, searchText);
-//        myClick(searchButton);
-//        wait.until(ExpectedConditions.elementToBeClickable(searchButton));
-//        // Alternative Way:
-//        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//ms-delete-button//button"), 1));
-//        myClick(deleteImageButton);
-//        myClick(deleteDialogButton);
-//    }
-
     public void deleteItem(String searchText) {
-        GWD.getDriver().navigate().refresh(); // Refresh the page
-
-        // Enter the search text and click search
+        GWD.getDriver().navigate().refresh();
         mySendKeys(searchInput, searchText);
         myClick(searchButton);
 
-        // Ensure the row with the searched text is visible
+        // Wait for the row containing the search text to be visible
         By rowLocator = By.xpath("//tr[td[contains(text(),'" + searchText + "')]]");
         wait.until(ExpectedConditions.visibilityOfElementLocated(rowLocator));
-        wait.until(ExpectedConditions.elementToBeClickable(searchButton));
 
-        // Check the number of delete buttons available
-        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//ms-delete-button//button"), 1));
+        // Wait for the delete button inside the specific row to be clickable
+        By deleteButtonLocator = By.xpath("//tr[td[contains(text(),'" + searchText + "')]]//ms-delete-button//button");
+        wait.until(ExpectedConditions.elementToBeClickable(deleteButtonLocator));
 
-        // Perform the delete operation
-        myClick(deleteImageButton);
+        // Click the delete button for the row containing the search text
+        WebElement deleteButton = GWD.getDriver().findElement(deleteButtonLocator);
+        deleteButton.click();
+
+        // Wait for the confirmation dialog button to be clickable
+        wait.until(ExpectedConditions.elementToBeClickable(deleteDialogButton));
+
         myClick(deleteDialogButton);
     }
 }
