@@ -7,7 +7,7 @@ import net.datafaker.Faker;
 import pages.DialogContent;
 import pages.LeftNav;
 
-public class _04_CitizenshipSteps {
+public class _03_CitizenshipSteps {
 
     LeftNav leftNav = new LeftNav();
     DialogContent dialogContent = new DialogContent();

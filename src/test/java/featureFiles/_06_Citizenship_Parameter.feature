@@ -14,11 +14,11 @@ Feature: Citizenship Functionality
     And Navigate to citizenship
 
   Scenario: Create a Citizenship
-    When Create a citizenship that name as "World citizenship" short name as "world"
+    When Create a citizenship that name as "Global Residency" short name as "GLO"
     Then Success message should be displayed
 
-    When Create a citizenship that name as "World citizenship" short name as "world"
+    When Create a citizenship that name as "Global Residency" short name as "GLO"
     Then Already exist message should be displayed
 
-    When User delete the citizenship that name as "World citizenship"
+    When User delete the citizenship that name as "Global Residency"
     Then Success message should be displayed

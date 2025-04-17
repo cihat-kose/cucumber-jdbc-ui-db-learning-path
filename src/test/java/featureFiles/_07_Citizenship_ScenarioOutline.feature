@@ -26,11 +26,11 @@ Feature: Citizenship Functionality
 
     Examples:
       | name       | shortname |
-      | Turkish    | sh561     |
-      | Canadian   | sh562     |
-      | Australian | sh563     |
-      | Norwegian  | sh564     |
-      | German     | sh565     |
+      | Turkish    | TR01      |
+      | Canadian   | CA02      |
+      | Australian | AU03      |
+      | Norwegian  | NO04      |
+      | German     | DE05      |
 
    #  dataProvider (for TestNG), Scenario Outline (cucumber)
    #  For each value given the # task, the entire scenario runs

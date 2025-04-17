@@ -37,9 +37,9 @@ Feature: Inventory functionality
 
     Then Success message should be displayed
     Examples:
-      | name                       | type          |
-      | Textbooks                  | student       |
-      | Laboratory Equipment       | administrator |
-      | Digital Learning Resources | student       |
-      | Classroom Supplies         | administrator |
-      | Educational Software       | administrator |
+      | name                    | type          |
+      | Curriculum Textbooks    | student       |
+      | Science Lab Equipment   | administrator |
+      | E-learning Materials    | student       |
+      | Classroom Essentials    | administrator |
+      | Academic Software Tools | administrator |

@@ -21,10 +21,10 @@ Feature: Cities Functionality Datatable
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput       | KeremCity |
-      | codeInput       | 23941     |
-      | integrationCode | Crypto    |
-      | priorityCode    | 42435     |
+      | nameInput       | Enrollment Fee |
+      | codeInput       | ENR-FEE-001    |
+      | integrationCode | ENR-INT-001    |
+      | priorityCode    | PR-ENR-001     |
 
     And User sending the Enter keys in Dialog
 
@@ -34,6 +34,6 @@ Feature: Cities Functionality Datatable
     Then Success message should be displayed
 
     And User delete the element from Dialog
-      | KeremCity |
+      | Enrollment Fee |
 
     Then Success message should be displayed

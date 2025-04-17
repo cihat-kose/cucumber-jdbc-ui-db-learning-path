@@ -16,8 +16,8 @@ Feature: DataTable Functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput | Norway0047 |
-      | codeInput | Nrw        |
+      | nameInput | Norway - NO |
+      | codeInput | NO - 47     |
 
     And Click on the element in Dialog
       | saveButton |
@@ -25,7 +25,7 @@ Feature: DataTable Functionality
     Then Success message should be displayed
 
     And User delete the element from Dialog
-      | Norway0047 |
+      | Norway - NO |
 
     Then Success message should be displayed
 
@@ -40,7 +40,7 @@ Feature: DataTable Functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput | KrmNat1 |
+      | nameInput | Norwegian - NO |
 
     And Click on the element in Dialog
       | saveButton |
@@ -48,7 +48,7 @@ Feature: DataTable Functionality
     Then Success message should be displayed
 
     And User delete the element from Dialog
-      | KrmNat1 |
+      | Norwegian - NO |
 
     Then Success message should be displayed
 
@@ -63,10 +63,10 @@ Feature: DataTable Functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput       | Krm1Fee1 |
-      | codeInput       | i2323    |
-      | integrationCode | 12155    |
-      | priorityCode    | 123456   |
+      | nameInput       | Fee-FE47      |
+      | codeInput       | FE47          |
+      | integrationCode | INT12347      |
+      | priorityCode    | PRIORITY12347 |
 
     And Click on the element in Dialog
       | toggleBar  |
@@ -75,6 +75,6 @@ Feature: DataTable Functionality
     Then Success message should be displayed
 
     And User delete the element from Dialog
-      | Krm1Fee1 |
+      | Fee-FE47 |
 
     Then Success message should be displayed

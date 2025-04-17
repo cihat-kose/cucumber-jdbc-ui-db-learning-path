@@ -33,9 +33,9 @@ Feature: Fees Multiple Values Functionality
     Then Success message should be displayed
 
     Examples:
-      | name     | code   | intCode  | priority |
-      | KrmFee10 | 902224 | PayPal   | 994304   |
-      | KrmFee20 | 802225 | Cash     | 912305   |
-      | KrmFee30 | 702226 | Cheque   | 901230   |
-      | KrmFee40 | 602227 | ApplePay | 912307   |
-      | KrmFee50 | 502229 | Crypto   | 912308   |
+      | name              | code     | intCode  | priority |
+      | Enrollment Fee    | ENR-001  | PayPal   | PR-1001  |
+      | Application Fee   | APP-002  | Cash     | PR-1002  |
+      | Library Fee       | LIB-003  | Cheque   | PR-1003  |
+      | Technology Fee    | TEC-004  | ApplePay | PR-1004  |
+      | Certification Fee | CERT-005 | Crypto   | PR-1005  |

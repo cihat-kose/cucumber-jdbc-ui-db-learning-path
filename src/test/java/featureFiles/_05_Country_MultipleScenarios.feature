@@ -12,8 +12,8 @@ Feature: Country Multi Scenario
     Then  Success message should be displayed
 
   @Regression
-  Scenario: Create a country 2
-    When  Create a country that name as "RandomCountry..." code as "RandomCode..."
+  Scenario: Create a country with base name and code (but generate unique)
+    When  Create a unique country based on name "TrainingLand" and code "TRL"
     Then  Success message should be displayed
  
 

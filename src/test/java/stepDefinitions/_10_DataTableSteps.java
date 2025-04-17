@@ -12,7 +12,7 @@ import utilities.GWD;
 
 import java.util.List;
 
-public class _09_DataTableSteps {
+public class _10_DataTableSteps {
 
     LeftNav leftNav = new LeftNav();
     DialogContent dialogContent = new DialogContent();

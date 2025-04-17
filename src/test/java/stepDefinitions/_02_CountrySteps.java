@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import net.datafaker.Faker;
 import pages.DialogContent;
 import pages.LeftNav;
+import utilities.GWD;
 
 public class _02_CountrySteps {
 
@@ -38,12 +39,28 @@ public class _02_CountrySteps {
 
     @When("Create a country that name as {string} code as {string}")
     public void createACountryThatNameAsCodeAs(String countryName, String countryCode) {
-        countryName = "RandomCountry" + " - " + faker.country().name() + " - " + faker.country().countryCode3();
-        countryCode = "RandomCode" + faker.country().countryCode3();
+        dialogContent.myClick(dialogContent.addButton);
+        dialogContent.mySendKeys(dialogContent.nameInput, countryName);
+        dialogContent.mySendKeys(dialogContent.codeInput, countryCode);
+        dialogContent.myClick(dialogContent.saveButton);
+    }
+
+    @When("Create a unique country based on name {string} and code {string}") // Parameterized but unique
+    public void createCountryWithParamButGenerateUnique(String baseName, String baseCode) {
+        String uniqueSuffix = String.valueOf(System.currentTimeMillis() % 100000);
+
+        String countryName = baseName + " - " + faker.country().name() + " - " + uniqueSuffix;
+        String countryCode = baseCode + "-" + faker.country().countryCode3() + uniqueSuffix;
 
         dialogContent.myClick(dialogContent.addButton);
         dialogContent.mySendKeys(dialogContent.nameInput, countryName);
         dialogContent.mySendKeys(dialogContent.codeInput, countryCode);
         dialogContent.myClick(dialogContent.saveButton);
+    }
+
+    @When("User delete the country that name as {string}")
+    public void userDeleteTheCountryThatNameAs(String name) {
+        GWD.getDriver().navigate().refresh(); // It was put due to a system/software side error of Country.
+        dialogContent.deleteItem(name);
     }
 }
