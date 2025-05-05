@@ -37,5 +37,4 @@ public class _08_TestRunnerParallel extends AbstractTestNGCucumberTests {
     public void beforeClass(String browserName) {
         GWD.threadBrowserName.set(browserName);
     }
-
 }

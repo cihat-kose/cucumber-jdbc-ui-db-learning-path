@@ -8,8 +8,10 @@ import io.cucumber.testng.CucumberOptions;
         features = {"src/test/java/featureFiles"},
         glue = {"stepDefinitions"},
         plugin = {
-                "pretty", // For more legible logs on the console
-                "json:target/cucumber/cucumber.json"} // JSON report for Jenkins
+                "pretty",
+                "json:target/cucumber/cucumber.json", // JSON report (for CI/CD tools)
+                "html:target/site/cucumber-smoke-report" // HTML report (for human eye tracking)
+        }
 )
 public class _04_TestRunnerSmoke extends AbstractTestNGCucumberTests {
 }
