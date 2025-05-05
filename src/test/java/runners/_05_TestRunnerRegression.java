@@ -8,8 +8,10 @@ import io.cucumber.testng.CucumberOptions;
         features = {"src/test/java/featureFiles"},
         glue = {"stepDefinitions"},
         plugin = {
-                "pretty", // For more legible logs on the console
-                "json:target/cucumber/cucumber.json"} // JSON report for Jenkins
+                "pretty", // Log output readable to console
+                "json:target/cucumber/cucumber.json", // JSON report (for Jenkins)
+                "html:target/site/cucumber-mixed-report" // HTML report (to view from a local browser)
+        }
 )
 public class _05_TestRunnerRegression extends AbstractTestNGCucumberTests {
 }

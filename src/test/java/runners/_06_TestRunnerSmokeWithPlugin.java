@@ -58,7 +58,7 @@ public class _06_TestRunnerSmokeWithPlugin {
         }
 
         @Override
-        @DataProvider(parallel = true)
+        @DataProvider(parallel = false)
         public Object[][] scenarios() {
             return super.scenarios();
         }
