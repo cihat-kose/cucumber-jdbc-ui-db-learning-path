@@ -22,9 +22,9 @@ Feature: Cities Functionality Datatable
 
     And User sending the keys in Dialog
       | nameInput       | Enrollment Fee |
-      | codeInput       | ENR-FEE-001    |
-      | integrationCode | ENR-INT-001    |
-      | priorityCode    | PR-ENR-001     |
+      | codeInput       | ENR-FEE-1001   |
+      | integrationCode | ENR-INT-1001   |
+      | priorityCode    | 1001           |
 
     And User sending the Enter keys in Dialog
 
