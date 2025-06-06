@@ -95,7 +95,6 @@ Example `ScenarioResults.xlsx` content:
 - **Apache POI**: Read and write Excel files for test data management.
 - **JDBC**: Perform database operations using JDBC.
 - **Jenkins Integration**: Easily integrate with Jenkins for continuous integration and delivery (CI/CD) processes.
-
 - **Page Object Model (POM)**: Improve test maintenance and readability by using the Page Object Model design pattern.
 
 ## Prerequisites
