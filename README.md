@@ -70,7 +70,7 @@ example database commonly used for educational and testing purposes.
 Test results are stored in the `test-output` and `testReports` directories. Test reports are generated in both HTML (
 Spark) and PDF formats using ExtentReports and may include screenshots.
 Additionally, test scenario results are recorded in the `ScenarioResults.xlsx`
-file.
+file. This file is located in the `src/test/java/apachePOI/resource` directory.
 
 The `ScenarioResults.xlsx` file provides a mini-report for each test scenario, including the scenario name, status (
 passed/failed), and the browser used. This is done using the `Hooks` class in the framework.
@@ -169,7 +169,7 @@ To run tests in parallel using TestNG XML files, you can use the provided `Paral
 `SmokeTest.xml` files. Follow these steps to enable parallel execution:
 
 1. **Use the `ParallelTest.xml` file**:
-    - Open the `ParallelTest.xml` file located in the `src/test/resources/xml` directory.
+    - Open the `ParallelTest.xml` file located in the `src/test/java/xml` directory.
     - Ensure the suite tag includes `parallel` and `thread-count` attributes. For example:
       ```xml
       <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
