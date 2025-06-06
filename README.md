@@ -1,4 +1,4 @@
-# Mersys UI DB Test Framework
+# Cucumber JDBC UI DB Learning Path
 
 ![Cucumber](https://img.shields.io/badge/Cucumber-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)
 ![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
@@ -19,18 +19,17 @@
 6. [Reporting](#reporting)
 7. [Features](#features)
 8. [Installation](#installation)
-9. [Configuration](#configuration)
-10. [Usage](#usage)
-11. [Parallel Testing](#parallel-testing)
-12. [Folder Structure](#folder-structure)
-13. [Dependencies](#dependencies)
-14. [Contributing](#contributing)
-15. [License](#license)
-16. [Contact](#contact)
+9. [Usage](#usage)
+10. [Parallel Testing](#parallel-testing)
+11. [Folder Structure](#folder-structure)
+12. [Dependencies](#dependencies)
+13. [Contributing](#contributing)
+14. [License](#license)
+15. [Contact](#contact)
 
 ## Introduction
 
-The Mersys UI DB Test Framework is an automated testing solution designed for seamless integration of UI and database (
+The Cucumber JDBC UI DB Learning Path is an automated testing solution designed for seamless integration of UI and database (
 DB) testing using Cucumber, Selenium, JDBC, and TestNG. This framework supports cross-browser testing and generates
 detailed reports.
 
@@ -100,7 +99,7 @@ Example `ScenarioResults.xlsx` content:
 1. Clone the repository:
     - Open IntelliJ IDEA.
     - Go to File > New > Project from Version Control.
-    - In the URL field, enter the repository URL: https://github.com/cihat-kose/mersys-ui-db-test-framework.git.
+    - In the URL field, enter the repository URL: https://github.com/cihat-kose/cucumber-jdbc-ui-db-learning-path.git
     - Click Clone.
 
 2. Install necessary plugins:
@@ -117,22 +116,6 @@ Example `ScenarioResults.xlsx` content:
 3. Open the project:
     - IntelliJ IDEA will automatically detect and import the project as a Maven project.
     - Wait for the dependencies to be downloaded.
-
-## Configuration
-
-1. **Configure properties**:
-    - Open `src/test/resources/cucumber.properties` and update the file with your database and browser details:
-        ```properties
-        browser=chrome
-        dbUrl=jdbc:mysql://localhost:3306/sakila
-        dbUser=root
-        dbPassword=password
-        ```
-    - Open `src/test/resources/extent.properties` and configure reporting options:
-        ```properties
-        reportPath=test-output/extent-report.html
-        screenshotPath=test-output/screenshots/
-        ```
 
 ## Usage
 
@@ -174,17 +157,22 @@ To run tests in parallel using TestNG XML files, you can use the provided `Paral
     - Ensure the suite tag includes `parallel` and `thread-count` attributes. For example:
       ```xml
       <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-      <suite name="ParallelSuite" parallel="tests" thread-count="4">
-          <test name="ParallelTest1">
-              <classes>
-                  <class name="com.example.tests.TestClass1"/>
-              </classes>
-          </test>
-          <test name="ParallelTest2">
-              <classes>
-                  <class name="com.example.tests.TestClass2"/>
-              </classes>
-          </test>
+      <suite name="All Test Suite" parallel="tests" thread-count="2">
+      <test name="Cross Browser Test - Edge">
+        <parameter name="browserType" value="edge"/>
+
+        <classes>
+            <class name="runners._08_TestRunnerParallel"/>
+        </classes>
+      </test>
+
+      <test name="Cross Browser Test - Firefox">
+        <parameter name="browserType" value="firefox"/>
+
+        <classes>
+            <class name="runners._08_TestRunnerParallel"/>
+        </classes>
+      </test>
       </suite>
       ```
 
@@ -195,7 +183,7 @@ To run tests in parallel using TestNG XML files, you can use the provided `Paral
 ## Folder Structure
 
 ```
-mersys-ui-db-test-framework/
+cucumber-jdbc-ui-db-learning-path/
 │
 ├── .idea/                      # IntelliJ IDEA configuration files
 ├── src/
