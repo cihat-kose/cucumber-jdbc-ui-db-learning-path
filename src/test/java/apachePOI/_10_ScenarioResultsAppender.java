@@ -22,7 +22,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-public class _10_Question_04 {
+public class _10_ScenarioResultsAppender {
 
     public static void main(String[] args) {
         String path = "src/test/java/ApachePOI/resource/ScenarioResultsDemo.xlsx";
