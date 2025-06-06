@@ -102,10 +102,10 @@ Example `ScenarioResults.xlsx` content:
 
 - **Java 21** or higher
 - **Maven 3.8+**
-- **Git** for version control
-- **IntelliJ IDEA** (or another IDE) with Cucumber and Gherkin plugins
-- **Chrome**, **Firefox**, or **Edge** with corresponding WebDriver binaries
-- **Jenkins** (optional) if you plan to run tests in a CI/CD pipeline
+- **Git** for version control management
+- **IntelliJ IDEA** (or a similar IDE) with Cucumber and Gherkin plugins installed
+- **Chrome**, **Firefox**, or **Edge** along with the appropriate WebDriver binaries
+- **Jenkins** for CI/CD pipelines (optional)
 
 ## Installation
 

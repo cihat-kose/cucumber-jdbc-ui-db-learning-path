@@ -1,28 +1,25 @@
 package apachePOI;
 
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class _06_Question_01 {
+public class _08_CreateMultiplicationTableExcel {
+
     public static void main(String[] args) throws IOException {
         /**
-         Boş bir excel dosyasına çarpım tablosunu
+         Yen bir excel dosyasına çarpım tablosunu
          alt alta yazdırınız.
          -------------------------------------------------------------------
-         Copy the multiplication table into a blank excel file
+         Copy the multiplication table into a new excel file
          print below.
          */
 
-        String path = "src/test/java/apachePOI/resource/MultiplicationTable.xlsx";
-        FileInputStream fileInputStream = new FileInputStream(path);
-        Workbook workbook = WorkbookFactory.create(fileInputStream);
-        Sheet sheet = workbook.getSheetAt(0);
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheet = workbook.createSheet("Sheet1");
 
         int newRowIndex = 0; // sheet.getPhysicalNumberOfRows();
 
@@ -40,8 +37,7 @@ public class _06_Question_01 {
             Row nextRow = sheet.createRow(newRowIndex++);
         }
 
-        fileInputStream.close();
-
+        String path = "src/test/java/apachePOI/resource/NewMultiplicationTable.xlsx";
         FileOutputStream fileOutputStream = new FileOutputStream(path);
         workbook.write(fileOutputStream);
         workbook.close();
