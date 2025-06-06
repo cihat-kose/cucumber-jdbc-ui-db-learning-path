@@ -211,7 +211,6 @@ mersys-ui-db-test-framework/
 │       │   ├── utilities/      # Utility classes and helpers
 │       │   └── xml/            # XML configuration files
 │       └── resources/
-│           ├── cucumber.properties  # Cucumber configuration files
 │           └── extent.properties    # Extent reporting configuration files
 │
 ├── target/                     # Maven build output
