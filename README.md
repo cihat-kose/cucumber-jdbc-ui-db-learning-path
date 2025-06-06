@@ -107,7 +107,6 @@ Example `ScenarioResults.xlsx` content:
 - **Chrome**, **Firefox**, or **Edge** with corresponding WebDriver binaries
 - **Jenkins** (optional) if you plan to run tests in a CI/CD pipeline
 
-
 ## Installation
 
 1. Clone the repository:
