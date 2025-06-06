@@ -18,14 +18,15 @@
 5. [Database Used](#database-used)
 6. [Reporting](#reporting)
 7. [Features](#features)
-8. [Installation](#installation)
-9. [Usage](#usage)
-10. [Parallel Testing](#parallel-testing)
-11. [Folder Structure](#folder-structure)
-12. [Dependencies](#dependencies)
-13. [Contributing](#contributing)
-14. [License](#license)
-15. [Contact](#contact)
+8. [Prerequisites](#prerequisites)
+9. [Installation](#installation)
+10. [Usage](#usage)
+11. [Parallel Testing](#parallel-testing)
+12. [Folder Structure](#folder-structure)
+13. [Dependencies](#dependencies)
+14. [Contributing](#contributing)
+15. [License](#license)
+16. [Contact](#contact)
 
 ## Introduction
 
@@ -81,6 +82,8 @@ Example `ScenarioResults.xlsx` content:
 | Login Test    | Passed | Chrome  |
 | Search Test   | Failed | Firefox |
 | Checkout Test | Passed | Edge    |
+![Sample Report Screenshot](testReports/testReport%208-Eki-23%2022.20.40/test-output/screenshots/embedded1.png)
+
 
 ## Features
 
@@ -92,7 +95,14 @@ Example `ScenarioResults.xlsx` content:
 - **Apache POI**: Read and write Excel files for test data management.
 - **JDBC**: Perform database operations using JDBC.
 - **Jenkins Integration**: Easily integrate with Jenkins for continuous integration and delivery (CI/CD) processes.
+
 - **Page Object Model (POM)**: Improve test maintenance and readability by using the Page Object Model design pattern.
+
+## Prerequisites
+
+- **Java 21** or higher
+- **Maven 3.8+**
+
 
 ## Installation
 
@@ -122,6 +132,10 @@ Example `ScenarioResults.xlsx` content:
 1. **Run tests**:
     - In IntelliJ IDEA, open the `src/test/java` directory.
     - Right-click on any test file or directory and select `Run 'TestName'`.
+    - To run from the command line, navigate to the project root and execute:
+      ```bash
+      mvn test
+      ```
 
 2. **Jenkins Integration**:
     - Create or configure a Jenkins job.
